@@ -1,0 +1,24 @@
+<header>
+	<div class="container">
+		<div class="header_navigation">
+			<div class="header_navigation__logo">
+				<img src="../../assets/logo.svg" alt="logo">
+			</div>
+			<nav #menu>
+				<ul>
+					<li><a class="active" href="#">PRODUCTS</a></li>
+					<li><a href="#">APP & GAMES</a></li>
+					<li><a href="#">FEATURES</a></li>
+					<li><a href="#">SUPPORT</a></li>
+					<li><a href="#">ABOUT</a></li>
+				</ul>
+			</nav>
+			<div #bag class="header_navigation__bag">
+				<img src="../../assets/icons/bag.svg" alt="bag">
+			</div>
+			<div class="header_navigation__hidden" (click)="drawMenu()">
+				<img src="../../assets/icons/menu.svg" alt="menu">
+			</div>
+		</div>
+	</div>
+</header>
