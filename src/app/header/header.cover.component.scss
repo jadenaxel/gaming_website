@@ -1,0 +1,144 @@
+@import "../../sass.scss";
+
+header {
+	padding: 55px 0;
+	.header {
+		&_cover {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, auto);
+			grid-template-areas:
+				"header image"
+				"text image"
+				"button image"
+				"stat image";
+
+			@include break(1095px) {
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(5, auto);
+				grid-template-areas:
+					"header"
+					"text"
+					"image"
+					"button"
+					"stat";
+			}
+
+			h1 {
+				grid-area: header;
+				width: 100%;
+				font-size: 68px;
+				text-transform: uppercase;
+				margin-bottom: 14px;
+
+				@include break(1095px) {
+					font-size: 40px;
+				}
+
+				span {
+					background: linear-gradient(270deg, #e55199, #a826cc);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+			& > p {
+				grid-area: text;
+				width: 100%;
+				font-size: 18.72px;
+				font-weight: 300;
+				margin-bottom: 32px;
+			}
+			&--button {
+				grid-area: button;
+				margin-bottom: 66px;
+
+				@include break(1095px) {
+					display: flex;
+					justify-content: center;
+				}
+
+				button {
+					max-width: 232px;
+					width: 100%;
+					height: 74px;
+					border: 0;
+					cursor: pointer;
+					transform: skewX(-15deg);
+					font-weight: bold;
+
+					@include break(1095px) {
+						max-width: 138px;
+					}
+
+					&:first-of-type {
+						margin-right: 10px;
+						color: white;
+						background: url("../../assets/buttonbg.png") no-repeat center;
+					}
+					&:last-of-type {
+						background: linear-gradient(270deg, #e55199, #a826cc);
+						background-clip: text;
+						-webkit-text-fill-color: transparent;
+
+						border-image-source: linear-gradient(to top, #e55199, #a826cc);
+						border-image-width: 1px 151px;
+					}
+				}
+			}
+			&--stat {
+				grid-area: stat;
+
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				@include break(1095px) {
+					justify-content: space-between;
+				}
+
+				div {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin-right: 31px;
+
+					@include break(1095px) {
+						margin-right: 0;
+						margin-bottom: 20px;
+					}
+
+					p {
+						&:first-of-type {
+							font-size: 30px;
+							margin-bottom: 5px;
+						}
+					}
+
+					&:nth-child(2) {
+						p {
+							&:first-of-type {
+								background: linear-gradient(270deg, #e55199, #a826cc);
+								background-clip: text;
+								-webkit-text-fill-color: transparent;
+							}
+						}
+					}
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+			img {
+				grid-area: image;
+				justify-self: end;
+
+				@include break(1095px) {
+					justify-self: initial;
+					margin-bottom: 50px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

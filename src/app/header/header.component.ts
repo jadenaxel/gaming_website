@@ -3,7 +3,7 @@ import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
+	styleUrls: ['./header.component.scss', "./header.cover.component.scss"],
 })
 export class HeaderComponent {
 	width: any;
