@@ -38,13 +38,31 @@ header {
 				display: none;
 				justify-self: start;
 			}
+
+			@include break(610px){
+				width: 100%;
+			}
+
 			ul {
 				display: flex;
+
+				@include break(610px){
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+				}
 
 				li {
 					list-style: none;
 					margin-right: 40px;
 					width: max-content;
+
+					@include break(610px){
+						margin-right: 0;
+						margin-bottom: 20px;
+						width: auto;
+					}
+
 					&:last-child {
 						margin-right: 0;
 					}
